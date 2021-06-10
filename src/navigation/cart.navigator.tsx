@@ -1,14 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { CartScreen } from '../screens';
-
-export type CartStackParamList = {
-  Cart: undefined;
-};
-
-export enum CartStackScreenNamesEnum {
-  CART = 'Cart'
-}
+import { CartStackParamList, CartStackScreenNamesEnum } from './types';
 
 const CartStack = createStackNavigator<CartStackParamList>();
 const CartStackNavigator = (): JSX.Element => (

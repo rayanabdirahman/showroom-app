@@ -5,7 +5,7 @@ import Container from '../../components/templates/Container';
 import {
   CartStackParamList,
   CartStackScreenNamesEnum
-} from '../../navigation/cart.navigator';
+} from '../../navigation/types';
 
 const CartScreen: React.FC<
   StackScreenProps<CartStackParamList, CartStackScreenNamesEnum.CART>

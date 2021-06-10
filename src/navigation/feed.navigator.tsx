@@ -1,14 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FeedScreen } from '../screens';
-
-export type FeedStackParamList = {
-  Feed: undefined;
-};
-
-export enum FeedStackScreenNamesEnum {
-  FEED = 'Feed'
-}
+import { FeedStackParamList, FeedStackScreenNamesEnum } from './types';
 
 const FeedStack = createStackNavigator<FeedStackParamList>();
 const FeedStackNavigator = (): JSX.Element => (

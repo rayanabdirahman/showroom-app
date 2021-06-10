@@ -5,7 +5,7 @@ import Container from '../../components/templates/Container';
 import {
   FeedStackParamList,
   FeedStackScreenNamesEnum
-} from '../../navigation/feed.navigator';
+} from '../../navigation/types';
 
 const FeedScreen: React.FC<
   StackScreenProps<FeedStackParamList, FeedStackScreenNamesEnum.FEED>

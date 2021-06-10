@@ -3,24 +3,19 @@ import { FlatList } from 'react-native';
 import BrandThumbnail from '../../atoms/BrandThumbnail';
 import Text from '../../atoms/Text';
 import { brandType } from '../../../sample/data';
-import { StackNavigationProp } from '@react-navigation/stack';
-import {
-  ShopStackParamList,
-  ShopStackScreenNamesEnum
-} from '../../../navigation/shop.navigator';
+import { useNavigation } from '@react-navigation/native';
+import { ShopStackScreenNamesEnum } from '../../../navigation/types';
 
 type FlatListProps = Omit<FlatList['props'], 'renderItem'>;
 
-type Props = FlatListProps & {
-  title?: string;
-  navigation: StackNavigationProp<ShopStackParamList, ShopStackScreenNamesEnum>;
-};
+type Props = FlatListProps & { title?: string };
 
 const BrandList = (props: Props) => {
+  const navigation = useNavigation();
   const renderItems = ({ item }: { item: brandType }) => (
     <BrandThumbnail
       onPress={() =>
-        props.navigation.navigate(ShopStackScreenNamesEnum.PRODUCTS, {
+        navigation.navigate(ShopStackScreenNamesEnum.PRODUCTS, {
           filterBy: item.name
         })
       }

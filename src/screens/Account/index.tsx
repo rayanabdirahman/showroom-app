@@ -5,7 +5,7 @@ import Container from '../../components/templates/Container';
 import {
   AccountStackParamList,
   AccountStackScreenNamesEnum
-} from '../../navigation/account.navigator';
+} from '../../navigation/types';
 
 const AccountScreen: React.FC<
   StackScreenProps<AccountStackParamList, AccountStackScreenNamesEnum.ACCOUNT>

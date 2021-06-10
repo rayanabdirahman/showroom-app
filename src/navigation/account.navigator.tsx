@@ -1,14 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AccountScreen } from '../screens';
-
-export type AccountStackParamList = {
-  Account: undefined;
-};
-
-export enum AccountStackScreenNamesEnum {
-  ACCOUNT = 'Account'
-}
+import { AccountStackParamList, AccountStackScreenNamesEnum } from './types';
 
 const AccountStack = createStackNavigator<AccountStackParamList>();
 const AccountStackNavigator = (): JSX.Element => (

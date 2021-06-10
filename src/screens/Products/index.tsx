@@ -5,7 +5,7 @@ import Container from '../../components/templates/Container';
 import {
   ShopStackParamList,
   ShopStackScreenNamesEnum
-} from '../../navigation/shop.navigator';
+} from '../../navigation/types';
 
 const ProductsScreen: React.FC<
   StackScreenProps<ShopStackParamList, ShopStackScreenNamesEnum.PRODUCTS>

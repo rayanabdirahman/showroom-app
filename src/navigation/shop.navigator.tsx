@@ -2,16 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ProductsScreen, ShopScreen } from '../screens';
 import Colors from '../constants/Colors';
-
-export type ShopStackParamList = {
-  Shop: undefined;
-  Products: { filterBy: string };
-};
-
-export enum ShopStackScreenNamesEnum {
-  SHOP = 'Shop',
-  PRODUCTS = 'Products'
-}
+import { ShopStackParamList, ShopStackScreenNamesEnum } from './types';
 
 const ShopStack = createStackNavigator<ShopStackParamList>();
 const ShopStackNavigator = (): JSX.Element => (

@@ -6,20 +6,7 @@ import ShopStackNavigator from './shop.navigator';
 import FeedStackNavigator from './feed.navigator';
 import CartStackNavigator from './cart.navigator';
 import AccountStackNavigator from './account.navigator';
-
-export type BottomTabParamList = {
-  Shop: undefined;
-  Feed: undefined;
-  Cart: undefined;
-  Account: undefined;
-};
-
-export enum BottomTabScreenNameEnum {
-  SHOP = 'Shop',
-  FEED = 'Feed',
-  CART = 'Cart',
-  ACCOUNT = 'Account'
-}
+import { BottomTabParamList, BottomTabScreenNameEnum } from './types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 const BottomTabNavigator = (): JSX.Element => (
