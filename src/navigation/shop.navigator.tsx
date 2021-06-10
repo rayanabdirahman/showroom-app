@@ -1,29 +1,36 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Text from '../components/atoms/Text';
-import Container from '../components/template/Container';
+import { ProductsScreen, ShopScreen } from '../screens';
+import Colors from '../constants/Colors';
 
 export type ShopStackParamList = {
   Shop: undefined;
+  Products: { filterBy: string };
 };
 
 export enum ShopStackScreenNamesEnum {
-  SHOP = 'Shop'
+  SHOP = 'Shop',
+  PRODUCTS = 'Products'
 }
-
-const placeholderScreen = ({ route }: any) => (
-  <Container>
-    <Text>Hello {route.name}</Text>
-  </Container>
-);
 
 const ShopStack = createStackNavigator<ShopStackParamList>();
 const ShopStackNavigator = (): JSX.Element => (
-  <ShopStack.Navigator initialRouteName={ShopStackScreenNamesEnum.SHOP}>
+  <ShopStack.Navigator
+    screenOptions={{
+      headerBackTitle: ' ',
+      headerTintColor: Colors.black
+    }}
+    initialRouteName={ShopStackScreenNamesEnum.SHOP}
+  >
     <ShopStack.Screen
       options={{ headerShown: false }}
       name={ShopStackScreenNamesEnum.SHOP}
-      component={placeholderScreen}
+      component={ShopScreen}
+    />
+    <ShopStack.Screen
+      options={({ route }) => ({ title: route.params.filterBy })}
+      name={ShopStackScreenNamesEnum.PRODUCTS}
+      component={ProductsScreen}
     />
   </ShopStack.Navigator>
 );

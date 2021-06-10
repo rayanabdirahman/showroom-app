@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Text from '../components/atoms/Text';
-import Container from '../components/template/Container';
+import { AccountScreen } from '../screens';
 
 export type AccountStackParamList = {
   Account: undefined;
@@ -11,12 +10,6 @@ export enum AccountStackScreenNamesEnum {
   ACCOUNT = 'Account'
 }
 
-const placeholderScreen = ({ route }: any) => (
-  <Container>
-    <Text>Hello {route.name}</Text>
-  </Container>
-);
-
 const AccountStack = createStackNavigator<AccountStackParamList>();
 const AccountStackNavigator = (): JSX.Element => (
   <AccountStack.Navigator
@@ -25,7 +18,7 @@ const AccountStackNavigator = (): JSX.Element => (
     <AccountStack.Screen
       options={{ headerShown: false }}
       name={AccountStackScreenNamesEnum.ACCOUNT}
-      component={placeholderScreen}
+      component={AccountScreen}
     />
   </AccountStack.Navigator>
 );
